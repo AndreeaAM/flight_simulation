@@ -40,3 +40,10 @@
 *.vcxproj
 *.filters
 *.user
+*.ilk
+*.recipe
+*.pdb
+FlightSimulation/.vs/FlightSimulation/v17/.suo
+*.log
+*.tlog
+*.idb
