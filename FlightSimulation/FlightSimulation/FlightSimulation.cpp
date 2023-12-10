@@ -15,6 +15,17 @@
 #include <fstream>
 #include <sstream>
 
+enum ECameraMovementType
+{
+	UNKNOWN,
+	FORWARD,
+	BACKWARD,
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN
+};
+
 class Shader
 {
 public:
@@ -144,6 +155,8 @@ private:
 private:
     unsigned int ID;
 };
+
+
 
 
 int main() {
