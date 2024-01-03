@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\G3D\flight_simulation\FlightSimulation\FlightSimulation\Output\stb-master;D:\G3D\flight_simulation\FlightSimulation\FlightSimulation\Output\glfw-3.3.4.bin.WIN32\include\GLFW;D:\G3D\flight_simulation\FlightSimulation\FlightSimulation\Output\glm-stable\glm;D:\G3D\flight_simulation\FlightSimulation\FlightSimulation\Output\glew-2.1.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\G3D\glfw-3.3.4.bin.WIN32\lib-vc2019;D:\G3D\glew-2.1.0\lib\Release\Win32;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\_external\GLEW\;..\_external\GLFW\;..\_external\glm\;..\_external\stb\;$(IncludePath)</IncludePath>
+    <LibraryPath>..\_external\GLEW\x86\;..\_external\GLFW\x86\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
