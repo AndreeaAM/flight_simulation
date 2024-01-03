@@ -386,6 +386,9 @@ int main()
 	std::string piratObjFileName = (currentPath + "\\Models\\Airplane\\airplane.obj");
 	Model piratObjModel(piratObjFileName, false);
 
+	std::string terrainObjFileName = (currentPath + "\\Models\\Terrain\\terrain.obj");
+	Model terrainObjModel2(terrainObjFileName, false);
+
 	// render loop
 	while (!glfwWindowShouldClose(window)) {
 		// per-frame time logic
@@ -419,6 +422,12 @@ int main()
 		glm::mat4 piratModel = glm::scale(glm::mat4(0.01), glm::vec3(1.f));
 		lightingShader.setMat4("model", piratModel);
 		piratObjModel.Draw(lightingShader);
+		
+		// Modify terrainModel matrix to lower the terrain
+		glm::mat4 terrainModel = glm::scale(glm::mat4(0.001), glm::vec3(1.f));
+		terrainModel = glm::translate(terrainModel, glm::vec3(100.0f, -100.0f, 0.0f)); // Adjust the y-coordinate as needed
+		lightingShader.setMat4("model", terrainModel);
+		terrainObjModel2.Draw(lightingShader);
 
 		// also draw the lamp object
 		lampShader.use();
