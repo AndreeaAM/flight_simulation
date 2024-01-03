@@ -425,7 +425,7 @@ int main()
 		
 		// Modify terrainModel matrix to lower the terrain
 		glm::mat4 terrainModel = glm::scale(glm::mat4(0.001), glm::vec3(1.f));
-		terrainModel = glm::translate(terrainModel, glm::vec3(100.0f, -100.0f, 0.0f)); // Adjust the y-coordinate as needed
+		terrainModel = glm::translate(terrainModel, glm::vec3(1.0f, -1.0f, 0.0f)); // Adjust the y-coordinate as needed
 		lightingShader.setMat4("model", terrainModel);
 		terrainObjModel2.Draw(lightingShader);
 
