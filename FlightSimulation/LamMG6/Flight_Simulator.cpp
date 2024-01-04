@@ -124,10 +124,13 @@ void AeroportInit()
         Aeroport[i].setScale(glm::vec3(10.f));
         Aeroport[i].initVAO();
     }
+    Aeroport[0].setScale(glm::vec3(5.f));
+    Aeroport[4].setScale(glm::vec3(5.f));
+    Aeroport[6].setScale(glm::vec3(5.f));
 
     GrassTex = CreateTexture("Resources/Grass.jpg");
     RoadTex = CreateTexture("Resources/Road.jpg");
-    RoofTex = CreateTexture("Resources/Shelter_simple_greenpanel.jpg");
+    RoofTex = CreateTexture("Resources/Shelter_simple_purplepanel.jpg");
     LeafTex = CreateTexture("10459_White_Ash_Tree_v1_Diffuse.jpg");
     TurnTex = CreateTexture("Resources/tower2.jpg");
     TileTex = CreateTexture("Resources/Shelter_simple_whitepanel.jpg");
@@ -253,6 +256,8 @@ int main(void)
     Avion.setColor(2, glm::vec3(0.5f, 0.5f, 0.5f));
     Avion.setRotation(glm::vec3(0.f, 180.0f, 0.f));
     Avion.setPosition(glm::vec3(0.0f, 0.0f, 0.0f));
+    //Avion.setScale(glm::vec3(0.2f, 0.2f, 0.2f)); // Adjust the scale as needed
+
     Avion.initVAO();
 
     Mesh Harta("Transilvania.obj");
