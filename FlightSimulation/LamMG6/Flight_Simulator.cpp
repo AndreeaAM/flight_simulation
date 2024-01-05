@@ -61,6 +61,7 @@ unsigned int TileTex;
 unsigned int LeafTex;
 unsigned int TurnTex;
 unsigned int Hangar;
+unsigned int CloudTex;
 
 void AeroportInit()
 {
@@ -91,14 +92,19 @@ void AeroportInit()
 
     Mesh ArchedHangar("AA/Hangars.obj"); //7
     Aeroport.push_back(ArchedHangar);
+	
+    Mesh Cloud("AA/cloud2.obj"); //8
+	Cloud.setColor(0, glm::vec3(1.0f, 1.0f, 1.0f));
+	Aeroport.push_back(Cloud);
 
     for (int i = 0; i < Aeroport.size(); i++)
     {
         if (i != 0 && i != 1 && i!= 6)
             Aeroport[i].setPosition(glm::vec3(10.f, -7.f, 10.f));
         else
-			if(i==11)
-				Aeroport[i].setPosition(glm::vec3(100.f, -7.f, 100.f));
+			if (i == 8)
+				Aeroport[i].setPosition(glm::vec3(0.f, 1000.f, 0.f));
+				
         else
             Aeroport[i].setPosition(glm::vec3(10.f, 0.f, 10.f));
         Aeroport[i].setScale(glm::vec3(10.f));
@@ -109,6 +115,7 @@ void AeroportInit()
     RoadTex = CreateTexture("Resources/road3.jpg");
     TurnTex = CreateTexture("Resources/tower2.jpg");
     Hangar = CreateTexture("Resources/hangar3.jpeg");
+	CloudTex = CreateTexture("Resources/2048x2048-white-solid-color-background.jpg");
 	
 }
 
@@ -146,11 +153,18 @@ void AeroportRender(Shader& shaderT, Shader& shaderM)
 									glBindTexture(GL_TEXTURE_2D, Hangar);
 									Aeroport[i].render(&shaderT);
 								}
+								else
+									if (i == 8)
+									{
+										glBindTexture(GL_TEXTURE_2D, CloudTex);
+										Aeroport[i].render(&shaderT);
+									}
+   
     }
     shaderM.Use();
     for (int i = 0; i < Aeroport.size(); i++)
     {
-		if (i != 0 && i != 1 && i != 3 && i != 6 && i != 7)
+		if (i != 0 && i != 1 && i != 3 && i != 6 && i != 7 && i!=8)
         {
             Aeroport[i].render(&shaderM);
         }
