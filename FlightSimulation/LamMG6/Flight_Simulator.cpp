@@ -62,6 +62,7 @@ unsigned int LeafTex;
 unsigned int TurnTex;
 unsigned int Hangar;
 unsigned int CloudTex;
+unsigned int WarehouseTex;
 
 void AeroportInit()
 {
@@ -99,11 +100,14 @@ void AeroportInit()
 
     for (int i = 0; i < Aeroport.size(); i++)
     {
-        if (i != 0 && i != 1 && i!= 6)
+        if (i != 0 && i != 1 && i != 6)
             Aeroport[i].setPosition(glm::vec3(10.f, -7.f, 10.f));
         else
-			if (i == 8)
-				Aeroport[i].setPosition(glm::vec3(0.f, 1000.f, 0.f));
+            if (i == 8)
+                Aeroport[i].setPosition(glm::vec3(0.f, 1000.f, 0.f));
+            else
+                if (i == 9)
+                    Aeroport[i].setPosition(glm::vec3(0.f, 1000.f, 1000.f));
 				
         else
             Aeroport[i].setPosition(glm::vec3(10.f, 0.f, 10.f));
@@ -159,6 +163,7 @@ void AeroportRender(Shader& shaderT, Shader& shaderM)
 										glBindTexture(GL_TEXTURE_2D, CloudTex);
 										Aeroport[i].render(&shaderT);
 									}
+                                    
    
     }
     shaderM.Use();
