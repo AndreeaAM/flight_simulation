@@ -64,80 +64,51 @@ unsigned int Hangar;
 
 void AeroportInit()
 {
-    Mesh AcoperisHangar("AA/AcoperisHangar.obj"); //0
-    Aeroport.push_back(AcoperisHangar);
 
-    Mesh DeepGarnet("AA/DeepGarnet.obj"); //1
-    DeepGarnet.setColor(0, glm::vec3(0.8f, 0.15f, 0.3f));
-    Aeroport.push_back(DeepGarnet);
-
-    Mesh Iarba("AA/Iarba.obj"); //2
+    Mesh Iarba("AA/Iarba.obj"); //0
     Aeroport.push_back(Iarba);
 
-    Mesh InteriorHangar("AA/InteriorHangar.obj"); //3
-    Aeroport.push_back(InteriorHangar);
-
-    Mesh MetalAvion("AA/MetalAvion.obj"); //4
-    MetalAvion.setColor(0, glm::vec3(0.5f, 0.5f, 0.5f));
-    Aeroport.push_back(MetalAvion);
-
-    Mesh MetalHangare("AA/MetalHangare.obj"); //5
-    Aeroport.push_back(MetalHangare);
-
-    Mesh NegruAvion("AA/NegruAvion.obj"); //6
-    NegruAvion.setColor(0, glm::vec3(0.1f, 0.1f, 0.1f));
-    Aeroport.push_back(NegruAvion);
-
-    Mesh PlaneMetal("AA/PlaneMetal.obj"); //7
-    PlaneMetal.setColor(0, glm::vec3(0.85f, 0.85f, 0.85f));
-    Aeroport.push_back(PlaneMetal);
-
-    Mesh Road("AA/Road.obj"); //8
+    Mesh Road("AA/Road.obj"); //1
     Aeroport.push_back(Road);
 
-    Mesh TurnBaza("AA/TurnBaza1.obj"); //9
+    Mesh TurnBaza("AA/TurnBaza1.obj"); //2
     TurnBaza.setColor(0, glm::vec3(0.85f, 0.85f, 0.85f));
     Aeroport.push_back(TurnBaza);
 
-    Mesh TurnBazaTexture("AA/TurnBazaTexture.obj"); //10
+    Mesh TurnBazaTexture("AA/TurnBazaTexture.obj"); //3
     Aeroport.push_back(TurnBazaTexture);
 
-    Mesh TurnVarfAlb("AA/TurnVarfAlb.obj"); //11
+    Mesh TurnVarfAlb("AA/TurnVarfAlb.obj"); //4
     TurnVarfAlb.setColor(0, glm::vec3(0.85f, 0.85f, 0.85f));
     Aeroport.push_back(TurnVarfAlb);
 
-    Mesh TurnVarfNegru("AA/TurnVarfNegru.obj"); //12
+    Mesh TurnVarfNegru("AA/TurnVarfNegru.obj"); //5
     TurnVarfNegru.setColor(0, glm::vec3(0.0f, 0.0f, 0.0f));
     Aeroport.push_back(TurnVarfNegru);
 
-    Mesh Fundatie("AA/Fundatie.obj"); //13
+    Mesh Fundatie("AA/Fundatie.obj"); //6
     Aeroport.push_back(Fundatie);
 
-    //Mesh ArchedHangar("AA/hanger/ArchedHangar.obj"); //14
-    //Aeroport.push_back(ArchedHangar);
+    Mesh ArchedHangar("AA/Hangars.obj"); //7
+    Aeroport.push_back(ArchedHangar);
 
     for (int i = 0; i < Aeroport.size(); i++)
     {
-        if (i != 2 && i != 8 && i!= 13)
+        if (i != 0 && i != 1 && i!= 6)
             Aeroport[i].setPosition(glm::vec3(10.f, -7.f, 10.f));
+        else
+			if(i==11)
+				Aeroport[i].setPosition(glm::vec3(100.f, -7.f, 100.f));
         else
             Aeroport[i].setPosition(glm::vec3(10.f, 0.f, 10.f));
         Aeroport[i].setScale(glm::vec3(10.f));
         Aeroport[i].initVAO();
     }
-    Aeroport[0].setScale(glm::vec3(5.f));
-    Aeroport[3].setScale(glm::vec3(5.f));
-    Aeroport[5].setScale(glm::vec3(5.f));
-	//Aeroport[14].setPosition(glm::vec3(10.f, 7.f, 10.f));
 
     GrassTex = CreateTexture("Resources/Grass.jpg");
     RoadTex = CreateTexture("Resources/road3.jpg");
-    RoofTex = CreateTexture("Resources/Shelter_simple_purplepanel.jpg");
-    LeafTex = CreateTexture("10459_White_Ash_Tree_v1_Diffuse.jpg");
     TurnTex = CreateTexture("Resources/tower2.jpg");
-    TileTex = CreateTexture("Resources/Shelter_simple_whitepanel.jpg");
-    GrindaTex = CreateTexture("Resources/Shelter_simple_frame.bmp");
-    Hangar = CreateTexture("Resources/GWC Zinc Hammered Finish_BaseColor.jpg");
+    Hangar = CreateTexture("Resources/hangar3.jpeg");
 	
 }
 
@@ -146,64 +117,40 @@ void AeroportRender(Shader& shaderT, Shader& shaderM)
     shaderT.Use();
     for (int i = 0; i < Aeroport.size(); i++)
     {
-        if (i == 2)
+        if (i == 0)
         {
             glBindTexture(GL_TEXTURE_2D, GrassTex);
             Aeroport[i].render(&shaderT);
         }
         else
-            if (i == 8)
+            if (i == 1)
             {
                 glBindTexture(GL_TEXTURE_2D, RoadTex);
                 Aeroport[i].render(&shaderT);
             }
             else
-                if (i == 0)
+                if (i == 3)
                 {
-                    glBindTexture(GL_TEXTURE_2D, RoofTex);
-                    Aeroport[i].render(&shaderT);
+                      glBindTexture(GL_TEXTURE_2D, TurnTex);
+                      Aeroport[i].render(&shaderT);
                 }
                 else
-                    if (i == 1)
-                    {
-                        glBindTexture(GL_TEXTURE_2D, LeafTex);
+                     if(i == 6)
+                     {
+                        glBindTexture(GL_TEXTURE_2D, RoadTex);
                         Aeroport[i].render(&shaderT);
-                    }
-                    else
-                        if (i == 10)
-                        {
-                            glBindTexture(GL_TEXTURE_2D, TurnTex);
-                            Aeroport[i].render(&shaderT);
-                        }
-                        else
-                            if (i == 3)
-                            {
-                                glBindTexture(GL_TEXTURE_2D, TileTex);
-                                Aeroport[i].render(&shaderT);
-                            }
-                            else
-                                if (i == 5)
-                                {
-                                    glBindTexture(GL_TEXTURE_2D, GrindaTex);
-                                    Aeroport[i].render(&shaderT);
-                                }
-                                else
-                                    if(i == 13)
-                                {
-                                        glBindTexture(GL_TEXTURE_2D, RoadTex);
-                                        Aeroport[i].render(&shaderT);
-                                }
-									else
-										if (i == 14)
-										{
-											glBindTexture(GL_TEXTURE_2D, Hangar);
-											Aeroport[i].render(&shaderT);
-										}
+                      }
+					else
+								if (i == 7)
+								{
+									glBindTexture(GL_TEXTURE_2D, Hangar);
+									Aeroport[i].render(&shaderT);
+								}
     }
     shaderM.Use();
     for (int i = 0; i < Aeroport.size(); i++)
     {
-		if (i != 2 && i != 8 && i != 0 && i != 1 && i != 10 && i != 3 && i != 5 && i != 13 && i != 14)
+		if (i != 0 && i != 1 && i != 3 && i != 6 && i != 7)
         {
             Aeroport[i].render(&shaderM);
         }
