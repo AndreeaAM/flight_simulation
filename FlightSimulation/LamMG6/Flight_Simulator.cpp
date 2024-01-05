@@ -111,8 +111,8 @@ void AeroportInit()
         Aeroport[i].initVAO();
     }
 
-    GrassTex = CreateTexture("Resources/Grass.jpg");
-    RoadTex = CreateTexture("Resources/road3.jpg");
+    GrassTex = CreateTexture("Resources/greengrass.jpg");
+    RoadTex = CreateTexture("Resources/road4.jpg");
     TurnTex = CreateTexture("Resources/tower2.jpg");
     Hangar = CreateTexture("Resources/hangar3.jpeg");
 	CloudTex = CreateTexture("Resources/2048x2048-white-solid-color-background.jpg");
@@ -260,8 +260,8 @@ int main(void)
         changeHour(shader, terrainShader);
 
         float clearR = 0.07f + skylight / 2.f - 0.1f;
-        float clearG = 0.13f + skylight / 2.f - 0.1f;
-        float clearB = 0.17 + skylight / 2.f - 0.1f;
+        float clearG = 0.15f + skylight / 2.f - 0.1f;
+        float clearB = 0.3 + skylight / 2.f - 0.1f;
         glClearColor(clearR, clearG, clearB, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         if (Avion.getPosition().y < 0.0f)
