@@ -1,0 +1,76 @@
+# Aspose.3D Wavefront OBJ Exporter
+# Copyright 2004-2023 Aspose Pty Ltd.
+# File created: 01/05/2024 14:28:18
+
+newmtl wire_028089177
+	Ka 0 0 0
+	Kd 0.105882354 0.34509805 0.6901961
+	Ke 0 0 0
+	illum 2
+	Ks 0.34901962 0.34901962 0.34901962
+	Ns 0.4
+	d 1
+	Tr 0
+newmtl _
+	Ka 0 0 0
+	Kd 0.6901961 0.6901961 0.6901961
+	Ke 0 0 0
+	illum 2
+	Ks 0.05882353 0.05882353 0.05882353
+	Ns 0.46
+	d 1
+	Tr 0
+newmtl _1
+	Ka 0 0 0
+	Kd 0.45490196 0.45490196 0.45490196
+	Ke 0 0 0
+	illum 2
+	Ks 0.05882353 0.05882353 0.05882353
+	Ns 0.46
+	d 1
+	Tr 0
+newmtl bolts
+	Ka 0 0 0
+	Kd 0.03529412 0.03529412 0.03529412
+	Ke 0 0 0
+	illum 2
+	Ks 1 1 1
+	Ns 0.46
+	d 1
+	Tr 0
+newmtl white
+	Ka 0 0 0
+	Kd 0.8156863 0.8156863 0.8156863
+	Ke 0 0 0
+	illum 2
+	Ks 0.039215688 0.039215688 0.039215688
+	Ns 0.54
+	d 1
+	Tr 0
+newmtl ins
+	Ka 0 0 0
+	Kd 0.95686275 0.95686275 0.95686275
+	Ke 0 0 0
+	illum 2
+	Ks 0 0 0
+	Ns 0
+	d 1
+	Tr 0
+newmtl black
+	Ka 0 0 0
+	Kd 0.03137255 0.03137255 0.03137255
+	Ke 0 0 0
+	illum 2
+	Ks 1 1 1
+	Ns 0.46
+	d 1
+	Tr 0
+newmtl glass
+	Ka 0 0 0
+	Kd 0.30588236 0.30588236 0.30588236
+	Ke 0 0 0
+	illum 2
+	Ks 1 1 1
+	Ns 0.46
+	d 1
+	Tr 0
